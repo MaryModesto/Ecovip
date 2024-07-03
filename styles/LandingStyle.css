@@ -1,6 +1,83 @@
+/* MAIN COLOR: #C2255C */
+/* ACCENT COLOR: #8AB14C */
+/* GREY COLOR: #495057 */
+
 /* GENERAL STYLES */
 * {
+  margin: 0;
+  padding: 0;
   font-family: "Sora", sans-serif;
+  transition: 0.2s linear;
 }
 
-/* NAVIGATION */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+body {
+  color: #495057;
+}
+
+.icon {
+  stroke: #c2255c;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* HEADER - General Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 9%;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+  /* flexbpox properties */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a:link {
+  text-decoration: none;
+}
+
+.logo--header {
+  color: #c2255c;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: #495057;
+  font-size: 2rem;
+  padding: 0 1.5rem;
+}
+
+nav a:hover {
+  color: #c2255c;
+}
+
+nav a:active {
+  color: #8ab14c;
+}
+
+.icons-container--header {
+  /* flexbox properties */
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon--header:hover {
+  fill: #c2255c;
+}
+
+.icon--header:active {
+  stroke: #8ab14c;
+  fill: #8ab14c;
+}
