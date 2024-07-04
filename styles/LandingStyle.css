@@ -2,7 +2,9 @@
 /* ACCENT COLOR: #8AB14C */
 /* GREY COLOR: #495057 */
 
+/*                   */
 /* GENERAL STYLES */
+/*                   */
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +21,7 @@ html {
 
 body {
   color: #495057;
+  text-transform: capitalize;
 }
 
 .icon {
@@ -27,7 +30,13 @@ body {
   height: 3rem;
 }
 
+a:active {
+  transition: 0s;
+}
+
+/*                           */
 /* HEADER - General Styles */
+/*                           */
 header {
   position: fixed;
   top: 0;
@@ -35,7 +44,8 @@ header {
   right: 0;
   padding: 2rem 9%;
   z-index: 1000;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  background-color: white;
 
   /* flexbpox properties */
   display: flex;
@@ -47,12 +57,36 @@ header a:link {
   text-decoration: none;
 }
 
+/* HEADER - logo && toggle*/
+#toggler--header {
+  display: none;
+}
+
+.icon--toggler {
+  stroke: #495057;
+  border-radius: 5rem;
+  padding: 0.3rem;
+}
+
+.icon--toggler:hover {
+  stroke: white;
+  background-color: #c2255c;
+  transition: 0s;
+}
+
+.icon--toggler:active {
+  stroke: white;
+  background-color: #8ab14c;
+  transition: 0s;
+}
+
 .logo--header {
   color: #c2255c;
   font-size: 3rem;
   font-weight: 600;
 }
 
+/* HEADER - nav */
 nav a {
   color: #495057;
   font-size: 2rem;
@@ -67,7 +101,9 @@ nav a:active {
   color: #8ab14c;
 }
 
+/* HEADER - icons */
 .icons-container--header {
+  margin-right: 3rem;
   /* flexbox properties */
   display: flex;
   gap: 1.5rem;
@@ -80,4 +116,79 @@ nav a:active {
 .icon--header:active {
   stroke: #8ab14c;
   fill: #8ab14c;
+  transition: 0s;
+}
+
+/*                           */
+/* HOME - general styles */
+/*                           */
+.main-container--home {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+    url(../img/dragonfruit--landing.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 9%;
+  /* flexbox properties */
+  display: flex;
+  align-items: center;
+}
+
+/*                           */
+/* !!! MEDIA QUERIES !!! */
+/*                           */
+@media (max-width: 2000px) {
+  .icon--toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  .icon--toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header .toggler-icon--header {
+    display: block;
+  }
+
+  .icon--toggler {
+    display: flex;
+  }
+
+  #toggler--header:checked ~ nav {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  header nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header nav a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
 }
